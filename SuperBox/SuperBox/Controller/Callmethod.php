@@ -7,7 +7,7 @@ class Callmethod{
     public function SendMail($args){
         require_once APP_PATH."\\Library\\Mail\\Mymailer.php";
         $mailer=new \Library\Mail\Mymailer();
-        if($args[3]){
+        if(isset($args[3])){
             $mailer->addFile($args[3]);
         }
         $bool=$mailer->send($args[0],$args[1],$args[2]);
