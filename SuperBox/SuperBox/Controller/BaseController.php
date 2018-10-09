@@ -88,7 +88,7 @@ class BaseController{
         $callmethod=new \SuperBox\Controller\Callmethod();
         try{
             if(method_exists($callmethod,$MethodName)){
-                $callmethod->$MethodName($args);
+                return $callmethod->$MethodName($args);
             }
             else{
                 throw new AppException("Error:<br/> Call to Undefined method:".$MethodName." in ".__CLASS__);
